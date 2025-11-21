@@ -1,0 +1,21 @@
+#!/bin/env bash
+
+# This script retrieves and displays the CPU and memory usage of pods in a specified Kubernetes namespace.
+# If no namespace is provided, it defaults to the "default" namespace.
+# # Usage:
+# #   ./kubectl-pod-top [namespace]
+# # Example:
+# #   ./kubectl-pod-top kube-system
+# # Note:
+# # Ensure that you have the necessary permissions to access the Kubernetes cluster and that
+# # kubectl is configured correctly to interact with your cluster.
+#
+
+namespace=${@:-default}
+
+# Retrieve resource usage statistics from Kubernetes
+output=$(kubectl top pod -n $namespace | tail -n +2)
+echo  "Resource          | Namespace             | Name            | CPU          | Memory"
+while read -r pod cpu mem; do
+echo "pod                | $namespace            | $pod            | $cpu         | $mem"
+done <<< "$output"
