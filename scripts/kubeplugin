@@ -3,9 +3,9 @@
 # This script retrieves and displays the CPU and memory usage of pods in a specified Kubernetes namespace.
 # If no namespace is provided, it defaults to the "default" namespace.
 # # Usage:
-# #   ./kubectl-pod-top [namespace]
+# #   ./kubeplugin [namespace]
 # # Example:
-# #   ./kubectl-pod-top kube-system
+# #   ./kubeplugin kube-system
 # # Note:
 # # Ensure that you have the necessary permissions to access the Kubernetes cluster and that
 # # kubectl is configured correctly to interact with your cluster.

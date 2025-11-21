@@ -5,7 +5,7 @@
 
 ### Install: 
 
-Copy `kubectl-pod-top` into `/usr/local/bin/`
+Rename `kubeplugin` to `kubectl-pod-top` and copy into `/usr/local/bin/`
 
 Usage:
 
